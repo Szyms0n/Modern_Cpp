@@ -1,17 +1,20 @@
 #include <iostream>
-#include <expected>
-
+#include <optional>
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+#include <math.h>
+#include <bits/valarray_after.h>
+
 #include "cameraParams.hpp"
 #include "point.hpp"
 
 
+std::optional<std::pair<double, double>> solveQuadraticEquation(double a, double b, double c);
 
 
 int main() {
-
-//
-
+    //
+    const auto t1= solveQuadraticEquation(1, 2, 3);
+    std::cout<<t1;
 
     point2D p1{1000,750};
     p1.calculateToMm();
@@ -46,3 +49,24 @@ int main() {
     return 0;
     // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
+
+
+    std::optional<std::pair<double, double>> solveQuadraticEquation(double a, double b, double c){
+
+    if (a == 0) {
+        if (b == 0 ) {
+            return std::nullopt;
+        }
+        double x = -c/b;
+        return std::make_pair(x, x);
+    };
+    const double delta = b * b - 4 * a * c;
+    if (delta < 0) {
+        return std::nullopt;
+    }
+    const double sqrtDelta = std::sqrt(delta);
+    double const x1  = (sqrtDelta - b)/2*a;
+    double const x2  = (-sqrtDelta + b)/2*a;
+    return std::make_pair(x1, x2);
+
+    };
