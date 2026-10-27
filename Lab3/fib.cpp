@@ -6,30 +6,22 @@
 // Created by Szymon Hetman on 26/10/2026.
 //
 
-std::ofstream File("fib.txt");
-
-
-
-double fib_recurrency(int n) {
+int fib_recurrency(int n) {
     if (n <=1) {
         return n;
     }
     else return fib_recurrency(n - 1) + fib_recurrency(n - 2);
 }
 
-
 int fib_for(int n ) {
     std::ofstream File("fib.txt");
-    std::vector<double> p={0,1};
-    double fib = 0;
+    std::vector<int> p={0,1};
     for (int i{0}; i <= n; i++) {
         if (i>=2) {
-            double sum = p[i-1] + p[i-2];
+            int sum = p[i-1] + p[i-2];
             p.push_back(sum);
         }
         File<<i<<": "<<p[i]<<std::endl;
-
-
     }
     return p[n];
     File.close();

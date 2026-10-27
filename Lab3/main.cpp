@@ -1,13 +1,8 @@
 #include <iostream>
 #include <optional>
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-#include <math.h>
-#include <iostream>
-
-
+#include <cmath>
 #include "cameraParams.hpp"
 #include "point.hpp"
-
 #include "fib.hpp"
 
 std::optional<std::pair<double, double>> solveQuadraticEquation(double a, double b, double c);
@@ -52,14 +47,6 @@ int main() {
     else {
         std::cout<<result.error();
     }
-
-
-
-
-
-
-
-
     return 0;
     // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
@@ -82,5 +69,4 @@ int main() {
     double const x1  = (sqrtDelta - b)/2*a;
     double const x2  = (-sqrtDelta + b)/2*a;
     return std::make_pair(x1, x2);
-
     };

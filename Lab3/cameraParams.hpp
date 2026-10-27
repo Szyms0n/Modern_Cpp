@@ -9,7 +9,6 @@ struct cameraParams {
     double pixelSize{0}; //mm
 
     void calculateParamsToMm ();
-
 };
 
 

@@ -4,10 +4,6 @@
 #include <expected>
 #include <iostream>
 
-;
-
-
-
 struct point3D {
     double x{0};
     double y{0};
@@ -20,6 +16,7 @@ struct point3D {
 struct point2D {
     double x{0};
     double y{0};
+
     void calculateToMm();
     static std::tuple<double, double, double> calculatePoint3D( const point2D& point1, const point2D& point2,  const cameraParams& camera );
     static std::expected<point3D, std::string> calculatePoint3D_2(const point2D& point1, const point2D& point2,  const cameraParams& camera);

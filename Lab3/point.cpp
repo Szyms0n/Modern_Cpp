@@ -33,13 +33,7 @@ std::expected<point3D, std::string> point2D::calculatePoint3D_2(const point2D& p
         double Yp = (camera.B/ distance)*point1.y;
 
         return point3D{Xp, Yp, Zp};
-
-
 };
-
-
-
-
 
 void point2D::calculateToMm() {
     x=x*0.005;
